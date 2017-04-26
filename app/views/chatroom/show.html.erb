@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <%= render 'layouts/head' %> 
+
+  <body>
+    <div class="header">
+      <div class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <h1>ActionChat</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="flash">
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name unless name == "notice" %>
+        <% end %>
+      </div>
+
+        <!-- ChatBox & Guests -->
+        <div class="row">
+          <div class="col-md-3" id="left-container">
+            <div id="guest-list">
+              <h2 class="text-center">Guests</h2>
+              <%= render @guests %>
+            </div>
+          </div>
+          
+          <div class="col-md-9" id="right-container">
+            <div id="chat-container"></div>
+            <div id="input-box">
+              <input id="chat-input" class="form-control pull-left" placeholder="Type your message here"/>
+              <button id="chat-send" class="pull-right">Send</button>
+            </div>
+          </div>
+        </div>
+        <!-- End ChatBox & Guests -->
+
+        <!-- Modals -->
+        <%= render 'modals/register_guest' %>
+
+        <script src="registerGuest.js"></script>
+        
+    </div>
+  </body>
+</html>

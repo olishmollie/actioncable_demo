@@ -1,0 +1,325 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/*****************************************************Global Options*****************************************************/
+
+#flash {
+  height: 50px;
+}
+
+.alert, .notice {
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+}
+
+.alert {
+  background-color: rgba(224, 123, 123, .8);
+}
+
+.notice {
+  background-color: rgba(33, 183, 113, .8);
+}
+
+body {
+  background-color: lightgray;
+}
+
+::-webkit-scrollbar {
+    /*display: ;*/
+  border-radius: 5px;
+  width: 8px;
+  background-color: rgba(33, 34, 35, .8);
+  border: 1px solid rgba(33, 34, 35, .8);
+}
+
+
+/*********************************************************Header*********************************************************/
+.header {
+  margin: 10px 0 30px;
+}
+
+.header .navbar {
+  background-color: gray;
+  border: none;
+}
+
+.header .h1  {
+  color: #99AAAA;
+  margin-top: 0;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 4.7em;
+}
+
+.header a {
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/************************************Episode Page************************************/
+
+/*Control Panel*/
+
+#timer {
+  color: #99AAAA;
+}
+
+#control-panel {
+  text-align: center;
+  margin: 50px 50px 25px;
+}
+
+#control-panel button {
+  border-color: rgb(165, 157, 140);
+  background-color: rgb(165, 157, 140);
+  color: #FFFFFF;
+}
+
+#start.btn,
+#stopButton.btn,
+#present-share-link-modal,
+#init:focus {outline:0;}
+
+.encoding {
+  margin-right: 5px;
+}
+
+#local-recording {
+  height: 30px;
+  margin: 10px auto;
+  position: relative;
+}
+
+.text-lg {
+  font-size: 1.5em;
+}
+
+/******** Guest Panels ********/
+#guest-list h2 {
+  margin-top: 0;
+}
+
+.guest {
+  height: 60px;
+  background-color: rgba(33, 34, 35, .8);
+  border: 1px solid rgba(33, 34, 35, .8);
+  color: #FFFFFF;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.guest h3 {
+  display: inline-block;
+  padding: 5px;
+  margin: 0px;
+}
+
+#present-share-link-modal {
+  height: 33.99px;
+  background-color: #a59d8c;
+  color: white;
+}
+
+/*Track List*/
+
+#track-list h1 {
+  text-align: center;
+  color: #99AAAA;
+}
+
+.track {
+  margin: 20px;
+  padding: 20px 60px;
+  text-align: center;
+  background-color: rgba(33, 34, 35, .8);
+  border: 1px solid rgba(33, 34, 35, .8);
+  border-color: transparent;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.track a {
+  color: #C7B185;
+}
+
+/*Chat Box*/
+#input-box {
+  padding: 5px 0;
+}
+
+#box {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#chat-input {
+  padding-left: 12px;
+  width: 76%;
+  border-radius: 5px;
+  background-color: rgba(33, 34, 35, .8);
+  border: 1px solid rgba(33, 34, 35, .8);
+  color: rgba(190, 181, 166, 1);
+}
+
+#chat-input:focus {outline:0;}
+
+#chat-send {
+  border: 0px solid rgba(33, 34, 35, 1);
+  border-radius: 5px;
+  background-color: rgba(33, 34, 35, 1);
+  color: #FFFFFF;
+  margin-left: 1.4px;
+  width:23%;
+  height: 33.99px;
+}
+
+#chat-send:focus {outline:0;}
+
+#chat-container {
+  padding-left: 12px;
+  background-color: rgba(33, 34, 35, .8);
+  height: 300px;
+  width: 100%;
+  overflow: auto;
+  border: 1px solid rgba(33, 34, 35, .8);
+  border-radius: 5px;
+  color: rgba(190, 181, 166, 1);
+}
+
+
+
+
+
+/*************Share Link Modal*************/
+
+.modal-content {
+  color: #FFFFFF;
+  background-color: rgba(33, 34, 35, 1);
+  border: 1px solid rgba(33, 34, 35, 1);
+}
+
+#modal-content {
+  background-color: #FFFFFF;
+}
+
+#copy-btn {
+  color: #FFFFFF;
+  border-color: rgb(165, 157, 140);
+  background-color: rgb(165, 157, 140);
+}
+
+/**********Register Guest Button**********/
+#register-guest-btn {
+  color: #FFFFFF;
+  border-color: rgb(165, 157, 140);
+  background-color: rgb(165, 157, 140);
+}
+
+
+/**********************************************************************Episodes List Page**********************************************************************/
+#new-episode-div,
+#episode-list {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+
+}
+
+#new-episode-div {
+  margin-bottom: 12px;
+}
+
+#present-new-episode-modal {
+  color: #FFFFFF;
+  border-color: rgb(165, 157, 140);
+  background-color: rgb(165, 157, 140);
+}
+
+ .episode-title {
+  color: #FFFFFF;
+}
+
+ .episode-title:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+small {
+  color: rgb(165, 157, 140)
+}
+
+.episode.panel.panel-default {
+  color: #FFFFFF;
+  border-radius: 5px;
+  background-color: rgba(33, 34, 35, .8);
+  border: 1px solid rgba(33, 34, 35, .8);
+}
+
+#new-episode-modal-btn,
+#present-new-episode-modal:focus {outline:0;}
+
+
+/*************** login and signup  ***********/
+.user-form-container {
+  color: #99AAAA;
+  padding: 5px;
+  border-color: rgba(33, 34, 35, .8);
+  background-color: rgba(33, 34, 35, .8);
+  border-radius: 5px;
+}
+
+.user-form-container form {
+  padding: 20px;
+}
+
+.user-form-container label {
+  font-size: 18px;
+}
+
+.user-form-container h2 {
+  font-size: 26px;
+  text-align: center;
+}
+
+.user-form-container input[type=submit] {
+  background-color: #a59d8c;
+  color: #fff;
+  margin-top: 20px;
+  border-color: #a59d8c;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+/**********New Episode Modal**********/
+#new-episode-modal-btn {
+  color: #FFFFFF;
+  border-color: rgb(165, 157, 140);
+  background-color: rgb(165, 157, 140);
+}
+
+.error {
+  color: red;
+}
+

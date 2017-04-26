@@ -1,0 +1,20 @@
+<!-- Register Guest Modal -->
+<div class="modal fade" id="register-guest-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Register</h4>
+      </div>
+      <div class="modal-body">
+        <div id="modal-flash" style="height: 30px"></div>
+        <%= form_for @guest do |f| %>
+          <%= f.text_field :name, placeholder: "Enter your name", class: "form-control input-lg" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" id="register-guest-btn" class="btn btn-primary" form="new_guest">Go</button>
+      </div>
+    </div>
+  </div>
+</div>
+
