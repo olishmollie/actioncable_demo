@@ -21,7 +21,9 @@ $(window).load(function() {
       .done(function (response) {
         $registerGuestModal.modal('hide');
         App.appearances.unsubscribe();
+        App.chat.unsubscribe();
         initiateActionCable();
+        App.chat.setupChat();
       })
       .fail(function (error) {
         $registerGuestModal.modal('hide');

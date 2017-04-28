@@ -1,9 +1,14 @@
 class ChatChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    stream_from'chat'
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+  end
+
+  def speak(message)
+    # ActionCable.server.broadcast 'chat',
+    #     message
+    guest.speak(message['text'])
   end
 end

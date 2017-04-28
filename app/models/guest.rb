@@ -10,4 +10,8 @@ class Guest < ApplicationRecord
     destroy
   end
 
+  def speak(message)
+    ChatBroadcastJob.perform_later(self, message)
+  end
+
 end

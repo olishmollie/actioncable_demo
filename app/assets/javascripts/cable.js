@@ -11,5 +11,10 @@ function initiateActionCable() {
   App.cable = ActionCable.createConsumer();
 
   subscribeToAppearances();
+  subscribeToChat();
 
 };
+
+ActionCable.Subscription.prototype.disconnected = function() {
+  $("#flash").flash("ERROR: Connection to the server was lost.", {class: 'alert'});
+}
