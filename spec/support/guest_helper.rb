@@ -13,6 +13,7 @@ module GuestHelper
       fill_in('guest[name]', with: name)
     end
     click_on("Go")
+    expect(page).to have_content name
   end
 end
 

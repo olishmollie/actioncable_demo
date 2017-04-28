@@ -1,37 +1,29 @@
 require 'rails_helper'
 
 RSpec.feature "Appearances", type: :feature, js: true do
-  let!(:user) { create(:user) }
+  let(:guest) { 'Picard' }
+  let(:new_guest) { 'Riker' }
 
   before(:each) do
-    login(user)
-    create_episode
-    @episode_url = page.current_url
+    visit '/'
+    create_guest('Picard')
   end
 
   scenario "A new guest appears" do
-    new_window = new_incognito_window
-    within_window new_window do
-      create_guest(@episode_url)
+    within_new_incognito_window do
+      visit '/'
+      create_guest(new_guest)
     end
-
-    expect(page).to have_content "Alex"
-    expect(page).to have_content user.name
-
-    new_window.close
+    expect(page).to have_content new_guest
   end
 
   scenario "A guest leaves" do
-    new_window = new_incognito_window
-    within_window new_window do
-      create_guest(@episode_url)
+    new_window = within_new_incognito_window do
+      visit '/'
+      create_guest(new_guest)
     end
 
-    # I shouldn't need sleep!!
-    sleep(2)
     new_window.close
-
-    expect(page).to have_content user.name
-    expect(page).to_not have_content "Alex"
+    expect(page).to_not have_content new_guest
   end
 end
