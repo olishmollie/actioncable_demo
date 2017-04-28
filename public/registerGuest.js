@@ -20,6 +20,8 @@ $(window).load(function() {
     $.ajax({ data: formData, method: this.method, url: this.action })
       .done(function(response) {
         $registerGuestModal.modal('hide');
+        initiateActionCable();
+        subscribeToAppearances();
       })
       .fail(function(error) {
         $registerGuestModal.modal('hide');
