@@ -2,7 +2,10 @@ class AppearancesBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(guest)
-    ActionCable.server.broadcast('appearances', {template: template(guest)})
+    ActionCable.server.broadcast 'appearances',
+                                 guest_id: guest.id,
+                                 template: template(guest),
+                                 appear: true
   end
 
   private

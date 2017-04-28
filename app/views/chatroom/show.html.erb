@@ -27,6 +27,9 @@
               <h2 class="text-center">Guests</h2>
               <%= render @guests %>
             </div>
+            <div class="text-center">
+              <%= link_to 'Destroy All Guests', guests_destroy_all_path, class: 'btn btn-lg btn-danger mb20', method: 'delete' %>
+            </div>
           </div>
           
           <div class="col-md-9" id="right-container">
@@ -41,6 +44,12 @@
 
         <!-- Modals -->
         <%= render 'modals/register_guest' %>
+
+        <!-- Guests -->
+      <!-- TODO: Fix guestIds bullshit hack-->
+        <div id="guest-ids" hidden>
+          <%= @guests.ids.empty? ? nil : @guests.ids %>
+        </div>
 
         <script src="registerGuest.js"></script>
         

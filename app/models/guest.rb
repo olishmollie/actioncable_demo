@@ -7,6 +7,7 @@ class Guest < ApplicationRecord
 
   def disappear
     GuestCleanupJob.perform_later(self)
+    destroy
   end
 
 end
