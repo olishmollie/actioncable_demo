@@ -4,10 +4,10 @@ class AppearancesChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    guest.disappear
+    guest.disappear if guest
   end
 
   def appear
-    guest.appear
+    guest.appear if guest
   end
 end

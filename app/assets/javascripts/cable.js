@@ -10,4 +10,6 @@ function initiateActionCable() {
 
   App.cable = ActionCable.createConsumer();
 
+  subscribeToAppearances();
+
 };
