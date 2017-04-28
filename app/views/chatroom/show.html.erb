@@ -45,12 +45,6 @@
         <!-- Modals -->
         <%= render 'modals/register_guest' %>
 
-        <!-- Guests -->
-      <!-- TODO: Fix guestIds bullshit hack-->
-        <div id="guest-ids" hidden>
-          <%= @guests.ids.empty? ? nil : @guests.ids %>
-        </div>
-
         <script src="registerGuest.js"></script>
         
     </div>
