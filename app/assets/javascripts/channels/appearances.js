@@ -6,7 +6,7 @@ function subscribeToAppearances() {
 
     received: function(data) {
       if (data.appear) {
-        fadeInGuestList(data.template);
+        this.fadeInGuestList(data.template);
       } else {
         $('#guest-' + data.id).fadeOut("slow", function() {
           $(this).remove();
@@ -14,5 +14,8 @@ function subscribeToAppearances() {
       }
     },
 
+    fadeInGuestList: function(html) {
+      $(html).hide().appendTo("#guest-list").fadeIn("slow");
+    }
   });
 }
