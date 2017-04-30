@@ -4,6 +4,10 @@ function subscribeToAppearances() {
       this.perform("appear");
     },
 
+    disconnected: function() {
+      $("#flash").flash("ERROR: Connection to the server was lost.", {class: 'alert'});
+    },
+
     received: function(data) {
       if (data.appear) {
         this.fadeInGuestList(data.template);
