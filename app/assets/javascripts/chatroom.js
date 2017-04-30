@@ -1,4 +1,9 @@
 $(window).load(function() {
+
+  function fadeInGuestList(html) {
+    $(html).hide().appendTo("#guest-list").fadeIn("slow");
+  }
+
   var $registerGuestModal = $('#register-guest-modal');
 
   $registerGuestModal.modal('show');
