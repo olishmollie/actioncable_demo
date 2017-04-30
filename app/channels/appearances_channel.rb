@@ -4,16 +4,20 @@ class AppearancesChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    ActionCable.server.broadcast "appearances",
-      guest_id: guest.id
-    guest.destroy
+    if guest
+      ActionCable.server.broadcast "appearances",
+        guest_id: guest.id
+      guest.destroy
+    end
   end
 
   def appear
-    ActionCable.server.broadcast "appearances",
-      appear: true,
-      guest_id: guest.id,
-      template: guest_template(guest)
+    if guest
+      ActionCable.server.broadcast "appearances",
+        appear: true,
+        guest_id: guest.id,
+        template: guest_template(guest)
+    end
   end
 
   private
