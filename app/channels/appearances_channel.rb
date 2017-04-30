@@ -4,10 +4,17 @@ class AppearancesChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    guest.disappear if guest
+    guest && ActionCable.server.broadcast("appearances", id: guest.id)
   end
 
   def appear
-    guest.appear if guest
+    guest && ActionCable.server.broadcast('appearances',
+      appear: true,
+      template: guest_template(guest))
   end
+
+  private
+    def guest_template(guest)
+      ApplicationController.renderer.render(partial: "guests/guest", locals: { guest: guest })
+    end
 end
