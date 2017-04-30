@@ -9,6 +9,11 @@ class GuestsController < ApplicationController
     end
   end
 
+  def destroy_all
+    Guest.destroy_all
+    redirect_to root_path
+  end
+
   private
     def guest_params
       params.require(:guest).permit(:name)
