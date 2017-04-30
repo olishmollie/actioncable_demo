@@ -78,7 +78,7 @@ RSpec.configure do |config|
 end
 
 Capybara.server = :puma
-Capybara.default_max_wait_time = 15
+Capybara.default_max_wait_time = 5
 Capybara.javascript_driver = :webkit
 
 Capybara::Webkit.configure do |config|
