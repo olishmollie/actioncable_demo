@@ -1,6 +1,7 @@
 function subscribeToChat() {
   App.chat = App.cable.subscriptions.create("ChatChannel", {
     connected: function () {
+      this.setupChat();
     },
 
     received: function (data) {
@@ -48,4 +49,9 @@ function subscribeToChat() {
       chatInput.value = '';
     }
   });
+}
+
+function unsubscribeFromChat() {
+  App.chat.teardownChat();
+  App.chat.unsubscribe();
 }

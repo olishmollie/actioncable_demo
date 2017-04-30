@@ -10,7 +10,6 @@ function subscribeToAppearances() {
 
     received: function(data) {
       if (data.appear) {
-        if (this.guestOnPage()) { return; }
         this.fadeInGuestList(data.template);
       } else {
         this.fadeOutGuestList(data.guest_id);
@@ -31,4 +30,8 @@ function subscribeToAppearances() {
       return $('#guest-' + guestId)[0];
     }
   });
+}
+
+function unsubscribeFromAppearances() {
+  App.appearances.unsubscribe();
 }

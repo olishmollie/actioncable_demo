@@ -16,8 +16,8 @@ function subscribeToAllChannels() {
 }
 
 function unsubscribeFromAllChannels() {
-  App.appearances.unsubscribe();
-  App.chat.unsubscribe();
+  unsubscribeFromAppearances();
+  unsubscribeFromChat();
 }
 
 function resetActionCable() {
