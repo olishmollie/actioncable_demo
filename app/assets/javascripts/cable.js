@@ -7,13 +7,24 @@
 
 function initiateActionCable() {
   this.App || (this.App = {});
-
   App.cable = ActionCable.createConsumer();
+};
 
+function subscribeToAllChannels() {
   subscribeToAppearances();
   subscribeToChat();
+}
 
-};
+function unsubscribeFromAllChannels() {
+  App.appearances.unsubscribe();
+  App.chat.unsubscribe();
+}
+
+function resetActionCable() {
+  unsubscribeFromAllChannels();
+  initiateActionCable();
+}
+
 
 ActionCable.Subscription.prototype.disconnected = function() {
   $("#flash").flash("ERROR: Connection to the server was lost.", {class: 'alert'});

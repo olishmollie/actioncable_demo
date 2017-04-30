@@ -21,9 +21,8 @@ $(window).load(function() {
     $.ajax({data: formData, method: this.method, url: this.action})
       .done(function (response) {
         $registerGuestModal.modal('hide');
-        App.appearances.unsubscribe();
-        App.chat.unsubscribe();
-        initiateActionCable();
+        resetActionCable();
+        subscribeToAllChannels();
         App.chat.setupChat();
       })
       .fail(function (error) {
@@ -33,4 +32,5 @@ $(window).load(function() {
   });
 
   initiateActionCable();
+  subscribeToAllChannels();
 });
