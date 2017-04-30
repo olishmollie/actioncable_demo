@@ -1,7 +1,7 @@
 function subscribeToAppearances() {
   App.appearances = App.cable.subscriptions.create("AppearancesChannel", {
     connected: function() {
-      this.perform("appear");
+      this.perform('appear');
     },
 
     disconnected: function() {
@@ -10,16 +10,25 @@ function subscribeToAppearances() {
 
     received: function(data) {
       if (data.appear) {
+        if (this.guestOnPage()) { return; }
         this.fadeInGuestList(data.template);
       } else {
-        $('#guest-' + data.id).fadeOut("slow", function() {
-          $(this).remove();
-        });
+        this.fadeOutGuestList(data.guest_id);
       }
     },
 
     fadeInGuestList: function(html) {
       $(html).hide().appendTo("#guest-list").fadeIn("slow");
+    },
+
+    fadeOutGuestList: function(guestId) {
+      $('#guest-' + guestId).fadeOut('slow', function() {
+        $(this).remove();
+      });
+    },
+
+    guestOnPage: function(guestId) {
+      return $('#guest-' + guestId)[0];
     }
   });
 }
