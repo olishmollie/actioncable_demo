@@ -5,7 +5,6 @@ function subscribeToAppearances() {
     },
 
     received: function(data) {
-      var $guestIds = $('#guest-ids');
       if (data.appear) {
         fadeInGuestList(data.template);
       } else {

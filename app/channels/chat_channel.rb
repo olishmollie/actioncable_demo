@@ -7,8 +7,6 @@ class ChatChannel < ApplicationCable::Channel
   end
 
   def speak(message)
-    # ActionCable.server.broadcast 'chat',
-    #     message
     guest.speak(message['text'])
   end
 end
