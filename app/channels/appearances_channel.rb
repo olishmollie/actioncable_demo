@@ -5,7 +5,6 @@ class AppearancesChannel < ApplicationCable::Channel
 
   def unsubscribed
     ActionCable.server.broadcast "appearances",
-      appear: false,
       guest_id: guest.id
     guest.destroy
   end
