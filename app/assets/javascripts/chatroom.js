@@ -23,7 +23,6 @@ $(window).load(function() {
         $registerGuestModal.modal('hide');
         resetActionCable();
         subscribeToAllChannels();
-        App.chat.setupChat();
       })
       .fail(function (error) {
         $registerGuestModal.modal('hide');
