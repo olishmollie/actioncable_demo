@@ -5,9 +5,23 @@
 //= require_self
 //= require_tree ./channels
 
-(function() {
+function initiateActionCable() {
   this.App || (this.App = {});
-
   App.cable = ActionCable.createConsumer();
+};
 
-}).call(this);
+function subscribeToAllChannels() {
+  subscribeToAppearances();
+  subscribeToChat();
+}
+
+function unsubscribeFromAllChannels() {
+  unsubscribeFromAppearances();
+  unsubscribeFromChat();
+}
+
+function resetActionCable() {
+  unsubscribeFromAllChannels();
+  initiateActionCable();
+}
+

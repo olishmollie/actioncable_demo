@@ -30,7 +30,7 @@
 }
 
 .alert {
-  background-color: rgba(224, 123, 123, .8);
+  background-color: red;
 }
 
 .notice {
@@ -204,6 +204,9 @@ body {
   color: rgba(190, 181, 166, 1);
 }
 
+.message {
+  margin: 5px 0 5px;
+}
 
 
 
@@ -327,3 +330,6 @@ small {
   margin-bottom: 20px;
 }
 
+.text-red {
+  color: red;
+}
